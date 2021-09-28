@@ -46,6 +46,7 @@ Hibernate models inside of this tag.-->
 		
 		<!-- We have to tell Hibernate which models are annotated because it doesn't autodetect annotations. -->
 		<mapping class="com.revature.model.Reimbursement"/>
+		<mapping class="com.revature.model.Employee"/>
 		
 		<!-- Hibernate has built-in caching. This can reduce the number of times that we have to run queries against
 		our DB.

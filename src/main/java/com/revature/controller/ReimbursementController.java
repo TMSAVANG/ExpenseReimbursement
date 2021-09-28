@@ -5,9 +5,8 @@ import static io.javalin.apibuilder.ApiBuilder.path;
 import static io.javalin.apibuilder.ApiBuilder.post;
 import static io.javalin.apibuilder.ApiBuilder.put;
 
-import java.util.List;
-
-import com.revature.model.Reimbursement;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.repository.ReimbursementRepository;
 
 import io.javalin.Javalin;
@@ -29,6 +28,11 @@ public class ReimbursementController
 			{
 				put(updateApproval);
 			});
+			
+			path("/submit", () ->
+			{
+				post(submitReimbursement);
+			});
 		});
 	}
 	
@@ -42,12 +46,29 @@ public class ReimbursementController
 	private Handler updateApproval = ctx ->
 	{
 		int ref = Integer.parseInt( ctx.queryParam("ref") );
-		int state = Integer.parseInt( ctx.queryParam("state") );
-		System.out.println(ref + "\n" + state);
+		int appr = Integer.parseInt( ctx.queryParam("appr") );
+		System.out.println(ref + "\n" + appr);
 		ReimbursementRepository reimbursementRepository = new ReimbursementRepository();
-		reimbursementRepository.updateApproval(ref,state);
-		ctx.json("approval set to " + ctx.queryParam("state"));
+		reimbursementRepository.updateApproval(ref,appr);
+		String jsonString = "{\"reference_num\":" + ref +", \"approval\":" + appr + "}";
+		ObjectMapper mapper = new ObjectMapper();
+		JsonNode updateJSON = mapper.readTree(jsonString);
+		ctx.json(updateJSON);
 		ctx.status(200);
+	};
+	
+	private Handler submitReimbursement = ctx ->
+	{
+		int emp_id = Integer.parseInt( ctx.queryParam("emp_id") );
+		double amt = Double.parseDouble( ctx.queryParam("amt") );
+		String rson = ctx.queryParam("rson");
+		ReimbursementRepository reimbursementRepository = new ReimbursementRepository();
+		reimbursementRepository.submitReimbursement(emp_id, amt, rson);
+		String jsonString = "{\"employee_id\":" + emp_id +", \"amount\":" + amt + ", \"reason\":\"" + rson +"\"}";
+		ObjectMapper mapper = new ObjectMapper();
+		JsonNode submitJSON = mapper.readTree(jsonString);
+		ctx.json(submitJSON);
+		ctx.status(201);
 	};
 }
 

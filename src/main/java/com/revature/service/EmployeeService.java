@@ -13,7 +13,7 @@ public class EmployeeService
 		
 		Employee user = empRepo.getEmployee(username);
 		
-		if (user.getPassword() == password)
+		if (user.getPassword().equals(password))
 		{
 			valid = true;
 		}

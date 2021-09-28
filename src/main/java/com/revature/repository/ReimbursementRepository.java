@@ -70,5 +70,34 @@ public class ReimbursementRepository
 		}
 	}
 	
-	//public void submitReimbursement()
+	public void submitReimbursement(int employee_id, double amount, String reason)
+	{
+		Session s = null;
+		Transaction tx = null;
+
+		
+		try
+		{
+			s = HibernateSessionFactory.getSession();
+			tx = s.beginTransaction();
+			
+			NativeQuery<Reimbursement> nq = s.createNativeQuery("INSERT INTO reimbursements (employee_id, amount, reason, approval) "
+					+ "VALUES (?, ?, ?, ?)");
+			nq.setParameter(1, employee_id);
+			nq.setParameter(2, amount);
+			nq.setParameter(3, reason);
+			nq.setParameter(4, 0);
+			nq.uniqueResult();
+		}
+		
+		catch (HibernateException e)
+		{
+			e.printStackTrace();
+		}
+		
+		finally
+		{
+			s.close();
+		}
+	}
 }
