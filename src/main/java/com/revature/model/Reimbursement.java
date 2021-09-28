@@ -25,8 +25,6 @@ public class Reimbursement
 	
 	@Id
 	@Column(name = "reference_num")
-	@GeneratedValue(generator = "reference_num_seq", strategy = GenerationType.AUTO)
-	@SequenceGenerator(allocationSize = 1, name = "reference_num_seq", sequenceName = "reference_num_seq")
 	private int reference_num;
 	@Column
 	private int employee_id;

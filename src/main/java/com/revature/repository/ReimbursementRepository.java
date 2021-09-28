@@ -2,13 +2,7 @@ package com.revature.repository;
 
 import com.revature.model.Reimbursement;
 import com.revature.util.HibernateSessionFactory;
-
-import java.sql.PreparedStatement;
 import java.util.List;
-
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -18,6 +12,7 @@ import org.hibernate.query.NativeQuery;
 
 public class ReimbursementRepository 
 {
+	
 	List<Reimbursement> reimbursements = null;
 
 	public List<Reimbursement> findAll()
@@ -74,4 +69,6 @@ public class ReimbursementRepository
 			s.close();
 		}
 	}
+	
+	//public void submitReimbursement()
 }

@@ -43,8 +43,10 @@ public class ReimbursementController
 	{
 		int ref = Integer.parseInt( ctx.queryParam("ref") );
 		int state = Integer.parseInt( ctx.queryParam("state") );
+		System.out.println(ref + "\n" + state);
 		ReimbursementRepository reimbursementRepository = new ReimbursementRepository();
 		reimbursementRepository.updateApproval(ref,state);
+		ctx.json("approval set to " + ctx.queryParam("state"));
 		ctx.status(200);
 	};
 }
