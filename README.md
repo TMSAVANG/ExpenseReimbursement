@@ -41,6 +41,8 @@ To do:
 </p>
 
 <h2>Getting Started</h2>
-~~~~
-Test
-~~~~
+~~~
+{
+  //This is a code block.
+}
+~~~
