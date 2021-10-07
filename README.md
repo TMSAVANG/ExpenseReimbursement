@@ -7,11 +7,12 @@ This is a simple expense reimbursement project. The goal for this project was to
 
 <h2>Technologies Used</h2>
 <p>
+  
 - Maven 3.8.2
-
+  
 - MariaDB 10.4 - Hosted through Amazon Web Services RDS.  
 
-3. MariaDB Java Client 2.7.4  
+- MariaDB Java Client 2.7.4  
   
 4. Javalin 3.13.11  
   
