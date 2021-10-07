@@ -7,24 +7,24 @@ This is a simple expense reimbursement project. The goal for this project was to
 
 <h2>Technologies Used</h2>
 <p>
-* Maven 3.8.2
-* MariaDB 10.4
-  - Hosted through Amazon Web Services RDS.
-- MariaDB Java Client 2.7.4
-- Javalin 3.13.11
-- SL4J 1.7.30
-- Jackson Databind 2.10.5
-- Junit 4.12
-- Mockito 1.95
-- Hibernate 5.57
+- Maven 3.8.2  
+- MariaDB 10.4  
+  - Hosted through Amazon Web Services RDS.  
+- MariaDB Java Client 2.7.4  
+- Javalin 3.13.11  
+- SL4J 1.7.30  
+- Jackson Databind 2.10.5  
+- Junit 4.12  
+- Mockito 1.95  
+- Hibernate 5.57  
 </p>
 
 <h2>Features</h2>
 <p>
-Currently Ready:
+Currently Ready:  
 - User can login
 
-To do:
+To do:  
 - Create logout and statistics methods.
 - Implement endpoints for all remaining methods.
 - Implement both frontend and backend testing.
