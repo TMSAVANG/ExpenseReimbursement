@@ -14,22 +14,23 @@ This is a simple expense reimbursement project. The goal for this project was to
 
 - MariaDB Java Client 2.7.4  
   
-4. Javalin 3.13.11  
+- Javalin 3.13.11  
   
-5. SL4J 1.7.30  
+- SL4J 1.7.30  
   
-6. Jackson Databind 2.10.5  
+- Jackson Databind 2.10.5  
   
-7. Junit 4.12  
+- Junit 4.12  
   
-8. Mockito 1.95  
+- Mockito 1.95  
   
-9. Hibernate 5.57  
+- Hibernate 5.57  
   
 </p>
 
 <h2>Features</h2>
 <p>
+  
 Currently Ready:  
 - User can login
 
