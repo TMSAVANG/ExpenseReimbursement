@@ -41,6 +41,7 @@ To do:
 </p>
 
 <h2>Getting Started</h2>
+
 ~~~
 {
   //This is a code block.
