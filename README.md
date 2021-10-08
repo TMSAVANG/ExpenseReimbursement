@@ -42,8 +42,15 @@ To do:
 
 <h2>Getting Started</h2>
 
+Navigate to your directory of choice in a terminal.
+
+Clone the repository
+
 ~~~
-{
-  //This is a code block.
-}
+  git clone https://github.com/TMSAVANG/ExpenseReimbursement.git
 ~~~
+
+Naviagate to the Frontend folder and open the home page.
+
+Login with appropriate credentials for your given database with the same given model properties.
+
